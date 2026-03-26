@@ -22,8 +22,11 @@ src/main/resources/cart-example.json – ejemplo de carrito de compras usado par
 #3. Requisitos
 Java 17 o superior.
 Maven 3.8+
+
 #4. Instalación y ejecución
+
 #4.1 Clonar el repositorio
+
 git clone https://github.com/simonmaximomejias/Checkout-Retail-con-Promociones-y-Medios-de-Pago.git
 cd Checkout-Retail-con-Promociones-y-Medios-de-Pago
 #4.2 Compilar el proyecto
