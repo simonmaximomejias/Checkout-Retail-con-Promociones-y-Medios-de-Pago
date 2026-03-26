@@ -2,6 +2,7 @@
 
 Autor: Simon Maximo Mejias Zapata
 Correo: simonmejzap@gmail.com
+
 Teléfono: 569 6599 4020
 
 Proyecto de ejemplo de un checkout de retail que incluye:
@@ -20,7 +21,7 @@ src/main/java/com/example/checkout/payment – estrategias de descuento por medi
 CheckoutApplication.java – clase principal para probar el flujo de checkout.
 src/main/resources/cart-example.json – ejemplo de carrito de compras usado para pruebas.
 3. Requisitos
-Java 17 o superior
+Java 17 o superior.
 Maven 3.8+
 4. Instalación y ejecución
 4.1 Clonar el repositorio
