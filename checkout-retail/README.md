@@ -6,55 +6,41 @@
 
 Proyecto de ejemplo de un checkout de retail que incluye:
 
-1. Promociones por compra múltiple (bulk discount).  
-2. Descuentos según el medio de pago (por ejemplo, débito).  
-3. Cálculo de subtotal, envío y total a pagar.
+Promociones por compra múltiple (bulk discount).
+Descuentos según el medio de pago (por ejemplo, débito).
+Cálculo de subtotal, envío y total a pagar.
 
-Este proyecto está desarrollado en **Java con Spring Boot** y puede ser ejecutado localmente con **Maven**.
+Este proyecto está desarrollado en Java con Spring Boot y puede ser ejecutado localmente con Maven.
 
----
-
-# 2. Contenido del repositorio
-
-1. `src/main/java/com/example/checkout` – código fuente principal.  
-2. `src/main/java/com/example/checkout/model` – modelos de datos (Producto, Carrito, Detalle de Descuento).  
-3. `src/main/java/com/example/checkout/promotion` – lógica de promociones.  
-4. `src/main/java/com/example/checkout/payment` – estrategias de descuento por medio de pago.  
-5. `CheckoutApplication.java` – clase principal para probar el flujo de checkout.  
-6. `src/main/resources/cart-example.json` – ejemplo de carrito de compras usado para pruebas.
-
----
-
-# 3. Requisitos
-
-1. Java 17 o superior  
-2. Maven 3.8+
-
----
-
-# 4. Instalación y ejecución
-
-## 4.1 Clonar el repositorio
-
-```bash
-git clone https://github.com/tuusuario/checkout-retail.git
-cd checkout-retail
-4.2 Compilar el proyecto
+#2. Contenido del repositorio
+src/main/java/com/example/checkout – código fuente principal.
+src/main/java/com/example/checkout/model – modelos de datos (Producto, Carrito, Detalle de Descuento).
+src/main/java/com/example/checkout/promotion – lógica de promociones.
+src/main/java/com/example/checkout/payment – estrategias de descuento por medio de pago.
+CheckoutApplication.java – clase principal para probar el flujo de checkout.
+src/main/resources/cart-example.json – ejemplo de carrito de compras usado para pruebas.
+#3. Requisitos
+Java 17 o superior.
+Maven 3.8+
+#4. Instalación y ejecución
+#4.1 Clonar el repositorio
+git clone https://github.com/simonmaximomejias/Checkout-Retail-con-Promociones-y-Medios-de-Pago.git
+cd Checkout-Retail-con-Promociones-y-Medios-de-Pago
+#4.2 Compilar el proyecto
 mvn clean compile
-4.3 Ejecutar la aplicación de prueba (desde CheckoutApplication.java)
+#4.3 Ejecutar la aplicación de prueba (CheckoutApplication.java)
 mvn exec:java -Dexec.mainClass="com.example.checkout.CheckoutApplication"
 
 Esto mostrará en consola un cálculo de checkout con descuentos por productos y por medio de pago.
 
-4.4 Ejecutar como servicio Spring Boot (opcional)
+#4.4 Ejecutar como servicio Spring Boot (opcional)
 mvn spring-boot:run
 
 El endpoint disponible será:
 
 POST http://localhost:8080/checkout
-
-5. Ejemplo de request y respuesta
-5.1 Formato original (solo referencia)
+#5. Ejemplo de request y respuesta
+#5.1 Formato original (solo referencia)
 {
   "items": [
     { "productId": "1", "name": "Laptop", "price": 100000, "quantity": 1 },
@@ -65,7 +51,7 @@ POST http://localhost:8080/checkout
 
 Nota: Este formato es el ejemplo original. Actualmente, el servicio funciona con el archivo cart-example.json usando sku y quantity.
 
-5.2 Ejemplo real (funciona con la aplicación)
+#5.2 Ejemplo real (funciona con la aplicación)
 
 Archivo src/main/resources/cart-example.json:
 
@@ -79,36 +65,42 @@ Archivo src/main/resources/cart-example.json:
   "shippingAddress":{"street":"Av. Falsa 123","city":"Ciudad","zoneId":"zone-1"},
   "paymentMethod":"DEBIT"
 }
-5.3 Salida esperada en consola
+Salida esperada en consola
 Subtotal productos: 200000.0
 Descuento productos: 10000.0
 Subtotal después de descuentos: 190000.0
 Costo de envío: 0.0
 Descuento pago: 19000.0
 Total a pagar: 171000.0
-6. Diseño y decisiones de implementación
-6.1 Modelos separados
+
+#6. Diseño y decisiones de implementación
+
+#6.1 Modelos separados
 Product → representa un producto con ID, nombre y precio.
 CartItem → representa un item en el carrito.
 DiscountDetail → representa cualquier descuento aplicado.
-6.2 Promociones como estrategia
+
+#6.2 Promociones como estrategia
 Promotion es una interfaz que permite agregar fácilmente nuevas promociones.
 BulkDiscountPromotion aplica 10% de descuento si se compran 2 o más unidades de un producto.
-6.3 Descuentos por medio de pago
+
+#6.3 Descuentos por medio de pago
 PaymentStrategy permite agregar nuevos tipos de pagos que tengan descuentos.
 DebitPayment aplica descuento por pagar con débito.
-6.4 CheckoutService
+
+#6.4 CheckoutService
 Centraliza la lógica de cálculo de total, aplicación de promociones y descuentos de pago.
 Calcula subtotal, envío y total final de manera modular.
-6.5 Extensibilidad
+
+#6.5 Extensibilidad
 Se puede agregar fácilmente nuevas promociones o estrategias de pago sin modificar la lógica existente.
-7. Posibles mejoras
+
+#8. Posibles mejoras
 Integración con base de datos para manejar productos dinámicamente.
 API REST completa para exponer el servicio de checkout.
 Soporte para más métodos de pago y tipos de promociones.
 Tests unitarios automáticos para garantizar la correcta aplicación de descuentos.
-8. Licencia
 
-Este proyecto se entrega bajo MIT License, lo que permite que cualquier persona pueda clonar, ejecutar y modificar el proyecto siempre que mantenga la atribución al autor:
+#10. Licencia
 
-Autor: Simon Maximo Mejias Zapata
+Este proyecto se entrega bajo MIT License, permitiendo que cualquiera con el enlace pueda clonar y ejecutar el proyecto.
