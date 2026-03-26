@@ -1,47 +1,34 @@
-# 1. Checkout Retail con Promociones y Medios de Pago
+1. Checkout Retail con Promociones y Medios de Pago
 
-**Autor:** Simon Maximo Mejias Zapata  
-**Correo:** simonmejzap@gmail.com  
-**Teléfono:** 569 6599 4020
+Autor: Simon Maximo Mejias Zapata
+Correo: simonmejzap@gmail.com
+Teléfono: 569 6599 4020
 
 Proyecto de ejemplo de un checkout de retail que incluye:
 
-1. Promociones por compra múltiple (bulk discount).  
-2. Descuentos según el medio de pago (por ejemplo, débito).  
-3. Cálculo de subtotal, envío y total a pagar.
+Promociones por compra múltiple (bulk discount).
+Descuentos según el medio de pago (por ejemplo, débito).
+Cálculo de subtotal, envío y total a pagar.
 
-Este proyecto está desarrollado en **Java con Spring Boot** y puede ser ejecutado localmente con **Maven**.
+Este proyecto está desarrollado en Java con Spring Boot y puede ser ejecutado localmente con Maven.
 
----
-
-# 2. Contenido del repositorio
-
-1. `src/main/java/com/example/checkout` – código fuente principal.  
-2. `src/main/java/com/example/checkout/model` – modelos de datos (Producto, Carrito, Detalle de Descuento).  
-3. `src/main/java/com/example/checkout/promotion` – lógica de promociones.  
-4. `src/main/java/com/example/checkout/payment` – estrategias de descuento por medio de pago.  
-5. `CheckoutApplication.java` – clase principal para probar el flujo de checkout.  
-6. `src/main/resources/cart-example.json` – ejemplo de carrito de compras usado para pruebas.
-
----
-
-# 3. Requisitos
-
-1. Java 17 o superior  
-2. Maven 3.8+
-
----
-
-# 4. Instalación y ejecución
-
-## 4.1 Clonar el repositorio
-
-```bash
-git clone https://github.com/tuusuario/checkout-retail.git
-cd checkout-retail
+2. Contenido del repositorio
+src/main/java/com/example/checkout – código fuente principal.
+src/main/java/com/example/checkout/model – modelos de datos (Producto, Carrito, Detalle de Descuento).
+src/main/java/com/example/checkout/promotion – lógica de promociones.
+src/main/java/com/example/checkout/payment – estrategias de descuento por medio de pago.
+CheckoutApplication.java – clase principal para probar el flujo de checkout.
+src/main/resources/cart-example.json – ejemplo de carrito de compras usado para pruebas.
+3. Requisitos
+Java 17 o superior
+Maven 3.8+
+4. Instalación y ejecución
+4.1 Clonar el repositorio
+git clone https://github.com/simonmaximomejias/Checkout-Retail-con-Promociones-y-Medios-de-Pago.git
+cd Checkout-Retail-con-Promociones-y-Medios-de-Pago
 4.2 Compilar el proyecto
 mvn clean compile
-4.3 Ejecutar la aplicación de prueba (desde CheckoutApplication.java)
+4.3 Ejecutar la aplicación de prueba (CheckoutApplication.java)
 mvn exec:java -Dexec.mainClass="com.example.checkout.CheckoutApplication"
 
 Esto mostrará en consola un cálculo de checkout con descuentos por productos y por medio de pago.
@@ -52,7 +39,6 @@ mvn spring-boot:run
 El endpoint disponible será:
 
 POST http://localhost:8080/checkout
-
 5. Ejemplo de request y respuesta
 5.1 Formato original (solo referencia)
 {
@@ -79,7 +65,7 @@ Archivo src/main/resources/cart-example.json:
   "shippingAddress":{"street":"Av. Falsa 123","city":"Ciudad","zoneId":"zone-1"},
   "paymentMethod":"DEBIT"
 }
-5.3 Salida esperada en consola
+Salida esperada en consola
 Subtotal productos: 200000.0
 Descuento productos: 10000.0
 Subtotal después de descuentos: 190000.0
@@ -109,6 +95,4 @@ Soporte para más métodos de pago y tipos de promociones.
 Tests unitarios automáticos para garantizar la correcta aplicación de descuentos.
 8. Licencia
 
-Este proyecto se entrega bajo MIT License, lo que permite que cualquier persona pueda clonar, ejecutar y modificar el proyecto siempre que mantenga la atribución al autor:
-
-Autor: Simon Maximo Mejias Zapata
+Este proyecto se entrega bajo MIT License, permitiendo que cualquiera con el enlace pueda clonar y ejecutar el proyecto.
