@@ -40,8 +40,11 @@ mvn spring-boot:run
 El endpoint disponible será:
 
 POST http://localhost:8080/checkout
+
 5. Ejemplo de request y respuesta
+   
 5.1 Formato original (solo referencia)
+
 {
   "items": [
     { "productId": "1", "name": "Laptop", "price": 100000, "quantity": 1 },
