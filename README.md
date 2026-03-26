@@ -73,27 +73,35 @@ Subtotal después de descuentos: 190000.0
 Costo de envío: 0.0
 Descuento pago: 19000.0
 Total a pagar: 171000.0
+
 6. Diseño y decisiones de implementación
+
 6.1 Modelos separados
 Product → representa un producto con ID, nombre y precio.
 CartItem → representa un item en el carrito.
 DiscountDetail → representa cualquier descuento aplicado.
+
 6.2 Promociones como estrategia
 Promotion es una interfaz que permite agregar fácilmente nuevas promociones.
 BulkDiscountPromotion aplica 10% de descuento si se compran 2 o más unidades de un producto.
+
 6.3 Descuentos por medio de pago
 PaymentStrategy permite agregar nuevos tipos de pagos que tengan descuentos.
 DebitPayment aplica descuento por pagar con débito.
+
 6.4 CheckoutService
 Centraliza la lógica de cálculo de total, aplicación de promociones y descuentos de pago.
 Calcula subtotal, envío y total final de manera modular.
+
 6.5 Extensibilidad
 Se puede agregar fácilmente nuevas promociones o estrategias de pago sin modificar la lógica existente.
-7. Posibles mejoras
+
+8. Posibles mejoras
 Integración con base de datos para manejar productos dinámicamente.
 API REST completa para exponer el servicio de checkout.
 Soporte para más métodos de pago y tipos de promociones.
 Tests unitarios automáticos para garantizar la correcta aplicación de descuentos.
-8. Licencia
+
+10. Licencia
 
 Este proyecto se entrega bajo MIT License, permitiendo que cualquiera con el enlace pueda clonar y ejecutar el proyecto.
